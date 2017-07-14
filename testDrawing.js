@@ -53,7 +53,7 @@ var drawingApp = (function () {
 		sizeHotspotStartY = 200,
 		sizeHotspotHeight = 36,
 		sizeLineStartY = 228,
-		totalLoadResources = 10,
+		totalLoadResources = 2,
 		curLoadResNum = 0,
 		sizeHotspotWidthObject = {
 			huge: 39,
@@ -714,26 +714,12 @@ var drawingApp = (function () {
 			contexts.outline = canvasElement.getContext("2d"); // Grab the 2d canvas context
 
 			// Load images
-			crayonImage.onload = resourceLoaded;
-			crayonImage.src = "images/crayon-outline.png";
 
-			markerImage.onload = resourceLoaded;
-			markerImage.src = "images/marker-outline.png";
 
-			eraserImage.onload = resourceLoaded;
-			eraserImage.src = "images/eraser-outline.png";
 
-			crayonBackgroundImage.onload = resourceLoaded;
-			crayonBackgroundImage.src = "images/crayon-background.png";
 
-			markerBackgroundImage.onload = resourceLoaded;
-			markerBackgroundImage.src = "images/marker-background.png";
 
-			eraserBackgroundImage.onload = resourceLoaded;
-			eraserBackgroundImage.src = "images/eraser-background.png";
 
-			bucketBackgroundImage.onload = resourceLoaded;
-			bucketBackgroundImage.src = "images/bucket-background.png";
 
 			crayonTextureImage.onload = function () {
 				contexts.texture.drawImage(crayonTextureImage, 0, 0, drawingAreaWidth, drawingAreaHeight);
@@ -741,8 +727,6 @@ var drawingApp = (function () {
 			};
 			crayonTextureImage.src = "images/crayon-texture.png";
 
-			swatchImage.onload = resourceLoaded;
-			swatchImage.src = "images/paint-outline.png";
 
 			outlineImage.onload = function () {
 

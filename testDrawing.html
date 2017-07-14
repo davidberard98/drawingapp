@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+</title>
+<style>
+
+#canvasDiv{
+/*
+	position:absolute;
+	top:100px;
+*/
+}
+canvas {
+	position: absolute;
+	z-index: 2;
+}
+#colorswatches{
+	position:absolute;
+	top: 400px !important;
+}
+
+#drawtypes {
+	position:absolute;
+	top: 450px !important;
+}
+</style>
+<script type="text/javascript" src="testDrawing.js"></script>
+</head>
+<body>
+
+<h1>Version where the bucket/etc tools are outside of the canvas.</h1>
+
+<div id="canvasDiv"></div>
+
+<div id="colorswatches">
+	<button data-r="220" data-g="0" data-b="0">red</button>
+	<button data-r="240" data-g="100" data-b="0">orange</button>
+	<button data-r="0" data-g="200" data-b="0">green</button>
+	<button data-r="10" data-g="0" data-b="240">blue</button>
+</div>
+<div id="drawtypes">
+	<button data-type="marker">Marker</button>
+	<button data-type="crayon">Crayon</button>
+	<button data-type="bucket">Bucket</button>
+	<button data-type="eraser">Eraser</button>
+</div>
+
+
+<script type="text/javascript">
+window.onload = drawingApp.init("images/watermelon-duck-outline.png");
+</script>
+</body>
+</html>

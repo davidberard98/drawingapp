@@ -401,7 +401,8 @@ var drawingApp = (function () {
 			}
 
 			// Return the difference in current color and start color within a tolerance
-			return (Math.abs(r - startR) + Math.abs(g - startG) + Math.abs(b - startB) < 255);
+			//return (Math.abs(r - startR) + Math.abs(g - startG) + Math.abs(b - startB) < 255);
+			return false;
 		},
 
 		colorPixel = function (pixelPos, r, g, b, a) {
@@ -433,7 +434,6 @@ var drawingApp = (function () {
 				x = newPos[0];
 				y = newPos[1];
 
-				console.log(x + " " + y);
 
 				// Get current pixel position
 				pixelPos = (y * drawingAreaWidth + x) * 4;
@@ -623,7 +623,6 @@ var drawingApp = (function () {
 			{
 				
 				swatchButtons[i].onclick = function() {
-					console.log("clicked " + this.dataset.r + " " + this.dataset.g + " " + this.dataset.b);
 					curColor = {
 						r: this.dataset.r, 
 						g: this.dataset.g, 

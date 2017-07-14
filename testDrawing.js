@@ -259,10 +259,11 @@ var drawingApp = (function () {
 /*
 				// Draw the background
 				context.drawImage(bucketBackgroundImage, 0, 0, canvasWidth, canvasHeight);
-
 */
 				// Draw the current state of the color layer to the canvas
 				contexts.drawing.putImageData(colorLayerData, 0, 0, 0, 0, drawingAreaWidth, drawingAreaHeight);
+
+
 
 /*
 				// Draw the color swatches
@@ -358,6 +359,7 @@ var drawingApp = (function () {
 					}
 
 					clearClick();
+					colorLayerData = contexts.drawing.getImageData(0, 0, drawingAreaWidth, drawingAreaHeight);
 				}
 			}
 
@@ -553,6 +555,7 @@ var drawingApp = (function () {
 
 					if (curTool === "bucket") {
 						// Mouse click location on drawing area
+						redraw();
 						paintAt(mouseX, mouseY);
 						redraw();
 					} else {
@@ -756,9 +759,14 @@ var drawingApp = (function () {
 				resourceLoaded();
 			};
 			outlineImage.src = imageurl;
+		},
+		removeall = function() {
+			context.canvas.parentElement.removeChild(context.canvas);
+			contexts.outline.canvas.parentElement.removeChild(contexts.outline.canvas);
 		};
 
 	return {
-		init: init
+		init: init,
+		remove: removeall
 	};
 }());

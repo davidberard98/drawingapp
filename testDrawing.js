@@ -636,7 +636,7 @@ var drawingApp = (function () {
 
 			var toolContainer = document.getElementById("drawtypes");
 			var toolButtons = toolContainer.childNodes;
-			for(var i=0;i<swatchButtons.length;++i)
+			for(var i=0;i<toolButtons.length;++i)
 			{
 				toolButtons[i].onclick = function() {
 					curTool = this.dataset.type;

@@ -621,7 +621,7 @@ var drawingApp = (function () {
 			contexts.outline.canvas.addEventListener("touchcancel", cancelDrawing, false);
 
 			var swatchContainer = document.getElementById("colorswatches");
-			var swatchButtons = swatchContainer.getElementsByTagName("button");
+			var swatchButtons = swatchContainer.childNodes;
 			for(var i=0;i<swatchButtons.length;++i)
 			{
 				
@@ -635,7 +635,7 @@ var drawingApp = (function () {
 			}
 
 			var toolContainer = document.getElementById("drawtypes");
-			var toolButtons = toolContainer.getElementsByTagName("button");
+			var toolButtons = toolContainer.childNodes;
 			for(var i=0;i<swatchButtons.length;++i)
 			{
 				toolButtons[i].onclick = function() {
